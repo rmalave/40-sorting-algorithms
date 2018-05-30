@@ -1,31 +1,4 @@
-# ![CF](http://i.imgur.com/7v5ASc8.png) Sorting Algorithms
-
-## Resources
-* [Watch w/ Code](https://visualgo.net/bn/sorting)
-* [Watch Different Data Sets](https://www.toptal.com/developers/sorting-algorithms)
-* [Watch Audio Visual Interpretation](https://www.youtube.com/watch?v=kPRA0W1kECg)
-
-## Feature Tasks
-* Implement the sorting algorithms defined in the files
-  * Bubble Sort
-  * Insertion Sort
-  * Bucket Sort
-  * Merge Sort
-  * Quicksort Sort
-* Pass all the test cases
-
-The **NativeSort** file is just the built-in array sort. It is
-present to serve as proof that the test infrastructure works.
-You don't need to implement any so-called "native sort" algorithm.
-
-Run the tests with `jest` or `jest --watch`.
-
-## Submission Guidelines
-* Fork this repo
-* Submit to Canvas
-
-## Sorting Algorithm Classification
-* [All Classifications](https://en.wikipedia.org/wiki/Sorting_algorithm#Classification)
+# Sorting Algorithms
 
 * **Runtime Complexity** - The majority of efficient sorting algorithms run in
   `O(N log N)` time. Less efficient sorting algorithms sort in `O(N^2)` (or
@@ -49,7 +22,6 @@ Run the tests with `jest` or `jest --watch`.
 * [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
 * [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort)
 * [Quicksort](https://en.wikipedia.org/wiki/Quicksort)
-* [Radix Sort](https://en.wikipedia.org/wiki/Radix_sort)
 
 ### Bubble Sort
 * **Worst Case Performance:** `O(N^2)`
@@ -123,22 +95,6 @@ sorted into a two-length array. Then two-length arrays are sorted into
 four-length arrays. And so on and so on until the entire array is remerged
 entirely back together all sorted.
 
-![merge sort visualization](Merge_sort_algorithm_diagram.svg)
-
-Practice writing a function `merge` that accepts two sorted arrays. The
-function should return one sorted array. Merge the arrays by starting at
-the beginning of each and always taking the current smallest of the two off the
-arrays and putting that element in the new array.
-
-```
-Input A1: [12, 43, 55, 87]
-Input A2: [23, 65, 84, 99]
-  Output: [12, 23, 43, 55, 65, 84, 87, 99]
-```
-
-Take 12 off A1, then 23 off A2, then 43 off A1, then 55 off A1, then 65, 84, 87
-and 99.
-
 ### Bucket Sort
 If you're data set is integers within a certain range you can create a sorted
 copy of the data in `O(N)` time by iterating through the data and tallying up
@@ -195,30 +151,3 @@ situations. If you start the pivot at the start or end of the array and the
 array starts as sorted then it can take worst case `O(N^2)` time. Solutions for
 this problem state that the pivot should be chosen as a random index, or the
 middle index.
-
-### Radix Sort
-Most sorts perform best-case `O(N log N)`. Think of `O(N log N)` as
-a combination of doing something linearly, combined with a binary search. Best
-case you need to look at every one thing `O(N)` and compare it to see where it
-fits in the data set (binary search `O(log N)`. This, you need to do `N`
-binary-search-like operations. So: `O(N log N)`.
-
-Radix Sort is a uniquely strange sort that runs in `O(N)` time. It doesn't work
-for all types of data though. It really only works for integers.
-
-Radix Sort iterates through the data and grabs the largest leading digits.
-
-Read the section on Radix Sort's "efficiency" on Wikipedia. It's contentious.
-Some people say it's `O(wN)` where `w` has to do with the length of the keys
-(the length of digits of numbers your sorting). People point out that it can
-deceptively appear `O(N)` when in fact it's really worst case `O(N log N)`,
-just like every other sorting algorithm.
-
-* [Radix Sort Efficiency](https://en.wikipedia.org/wiki/Radix_sort#Efficiency)
-
-### Spaghetti Sort
-Here's a slightly funny physical-world sorting algorithm, "Spaghetti Sort."
-Say you have spaghetti sticks and want to sort them by their length. Grab
-them in your hand and press them on the table. Longer sticks stick out the top
-now. Grab the longest sticks and put them at the end of an array of sticks.
-Repeat this over and over until you've removed all the sticks.
